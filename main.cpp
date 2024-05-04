@@ -47,3 +47,63 @@ int main() {
     announceWinner(winner(board), computer, human);
     return 0;
 }
+
+
+void instructions() {
+    cout << "Tic Tac Toe machine game\n";
+    cout << "--where human brain is pit against silicon processor!!!\n\n";
+    cout << "Make your move known by entering a number from 0 to 8. The number\n";
+    cout << "corresponds to the desired boar position, as illustrated\n\n";
+    cout << " 0 | 1 | 2 \n";
+    cout << "------------";
+    cout << " 3 | 4 | 5 \n";
+    cout << "------------";
+    cout << " 6 | 7 | 8 \n\n";
+    cout << "Prepare yourself! The battle is about to begin!\n\n";
+}
+
+char askYesNo(string question) {
+    /* Функция запрашивает у пользователя вопрос и ожидает
+     * от него получения ответа в виде букв y/n. Пока
+     * пользователь не введет один из этих символов,
+     * функция продолжит задавать вопрос.*/
+    char response;
+    do {
+        cout << question << " (y/n): ";
+        cin >> response;
+    } while (response != 'y' && response != 'n');
+    return response;
+}
+
+int askNumber(string question, int high, int low) {
+    /* Запрашивает у пользователя число из определенного
+     * диапазона. Запрашивает числа, пока пользователь не
+     * введет число, удовлетворяющее условию.*/
+    int number;
+    do {
+        cout << question << " (" << low << " - " << high << "): ";
+        cin >> number;
+    } while (number > high || number < low);
+    return number;
+}
+
+char humanPiece() {
+    char go_first = askYesNo("Do you require the first move?");
+    if (go_first == 'y') {
+        cout << "\nThen take the first move. You will need it!\n";
+        return X;
+    } else {
+        cout << "\nYour bravery will be your undoing...I will go first!\n";
+        return O;
+    }
+}
+
+char opponent(char piece) {
+    /* Эта функция возвращает фигуру, которой будет ходить оппонент */
+    switch (piece) {
+        case X:
+            return O;
+        case O:
+            return X;
+    }
+}
