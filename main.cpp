@@ -55,9 +55,9 @@ void instructions() {
     cout << "Make your move known by entering a number from 0 to 8. The number\n";
     cout << "corresponds to the desired boar position, as illustrated\n\n";
     cout << " 0 | 1 | 2 \n";
-    cout << "------------";
+    cout << "------------\n";
     cout << " 3 | 4 | 5 \n";
-    cout << "------------";
+    cout << "------------\n";
     cout << " 6 | 7 | 8 \n\n";
     cout << "Prepare yourself! The battle is about to begin!\n\n";
 }
@@ -108,11 +108,11 @@ char opponent(char piece) {
 }
 
 void displayBoard(const vector<char> &board) {
-    cout << "\n\t" << board[0] << "|" << board[1] << "|" << board[2];
-    cout << "\n\t" << "---------";
-    cout << "\n\t" << board[3] << "|" << board[4] << "|" << board[5];
-    cout << "\n\t" << "---------";
-    cout << "\n\t" << board[6] << "|" << board[7] << "|" << board[8];
+    cout << "\n" << board[0] << " | " << board[1] << " | " << board[2];
+    cout << "\n" << "---------";
+    cout << "\n" << board[3] << " | " << board[4] << " | " << board[5];
+    cout << "\n" << "---------";
+    cout << "\n" << board[6] << " | " << board[7] << " | " << board[8];
     cout << "\n\n";
 }
 
